@@ -8,10 +8,16 @@ import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { DialogAddUserComponent } from './dialog-add-user/dialog-add-user.component';
+import { DialogAddUserComponent } from './user/dialog-add-user/dialog-add-user.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, UserComponent, PageNotFoundComponent, DialogAddUserComponent],
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    UserComponent,
+    PageNotFoundComponent,
+    DialogAddUserComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, MaterialModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
