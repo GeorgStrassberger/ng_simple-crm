@@ -1,10 +1,19 @@
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <p>Auto-resizing sidenav</p>
-    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Toggle extra text
-    </button>
+<mat-drawer-container autosize>
+  <mat-drawer #drawer [opened]="true" mode="side">
+    <div class="sidenav__logo-container">
+      Platz für Logo
+    </div>
+
+    <ul>
+      <li>
+        <mat-icon>perm_identity</mat-icon>
+        <span>Dashboard</span>
+      </li>
+      <li>
+        <mat-icon>fact_check</mat-icon>
+        <span>User</span>
+      </li>
+    </ul>
   </mat-drawer>
 
   <div class="example-sidenav-content">
