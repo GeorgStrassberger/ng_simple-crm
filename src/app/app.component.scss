@@ -35,6 +35,10 @@ mat-drawer {
       &:hover {
         background-color: lightgray;
       }
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 }
@@ -43,4 +47,9 @@ mat-toolbar,
 mat-toolbar-row {
   min-height: 56px;
   height: 56px;
+}
+
+.router-container {
+  padding-left: 3.5rem;
+  padding-top: 1rem;
 }

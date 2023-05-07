@@ -5,11 +5,11 @@
     </div>
 
     <ul>
-      <li>
+      <li routerLink="/">
         <mat-icon>perm_identity</mat-icon>
         <span>Dashboard</span>
       </li>
-      <li>
+      <li routerLink="/user">
         <mat-icon>fact_check</mat-icon>
         <span>User</span>
       </li>
@@ -23,6 +23,10 @@
         <span>Simple CRM</span>
       </mat-toolbar-row>
     </mat-toolbar>
+
+    <div class="router-container">
+      <router-outlet></router-outlet>
+    </div>
 
   </div>
 
