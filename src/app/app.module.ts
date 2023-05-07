@@ -7,9 +7,10 @@ import { MaterialModule } from './shared/modules/material.module';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, UserComponent],
+  declarations: [AppComponent, DashboardComponent, UserComponent, PageNotFoundComponent],
   imports: [BrowserModule, AppRoutingModule, MaterialModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
