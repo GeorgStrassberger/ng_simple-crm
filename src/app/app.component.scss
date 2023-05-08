@@ -8,7 +8,6 @@ mat-drawer-container {
 
 mat-drawer {
   width: 18.75rem;
-
   .sidenav__logo-container {
     border-bottom: 1px solid lightgrey;
     padding: 1rem;
@@ -16,26 +15,21 @@ mat-drawer {
     display: flex;
     align-items: center;
   }
-
   ul {
     list-style: none;
     padding: 0;
-
     li {
       display: flex;
       align-items: center;
       padding-inline: 1rem;
       height: 3rem;
       cursor: pointer;
-
       mat-icon {
         margin-right: 1rem;
       }
-
       &:hover {
         background-color: lightgray;
       }
-
       &:focus {
         outline: none;
       }
@@ -50,6 +44,6 @@ mat-toolbar-row {
 }
 
 .router-container {
-  padding-left: 3.5rem;
+  padding-inline: 3.5rem;
   padding-top: 1rem;
 }

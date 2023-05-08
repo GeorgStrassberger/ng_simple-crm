@@ -27,16 +27,28 @@
       <!-- <mat-hint>Please enter a Lastname</mat-hint> -->
     </mat-form-field>
   </div>
-  <!-- Date -->
+
   <div>
+    <!-- Email -->
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input
+        [disabled]="isLoading"
+        [(ngModel)]="user.email"
+        matInput
+        placeholder="Lastname"
+      />
+      <!-- <mat-hint>Please enter a Email
+      </mat-hint> -->
+    </mat-form-field>
     <!-- Birthdate -->
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Birth Date</mat-label>
+      <mat-label>Email</mat-label>
       <input
         [disabled]="isLoading"
         [(ngModel)]="birthDate"
         matInput
-        placeholder="Birth Date"
+        placeholder="Email"
         [matDatepicker]="picker1"
       />
       <mat-datepicker-toggle

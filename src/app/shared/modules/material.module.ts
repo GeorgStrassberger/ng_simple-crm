@@ -12,6 +12,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   imports: [
@@ -28,6 +31,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatNativeDateModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
+    MatCardModule,
+    MatTableModule,
+    MatSortModule,
   ],
   exports: [
     BrowserAnimationsModule,
@@ -43,6 +49,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatNativeDateModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
+    MatCardModule,
+    MatTableModule,
+    MatSortModule,
   ],
 })
 export class MaterialModule {}

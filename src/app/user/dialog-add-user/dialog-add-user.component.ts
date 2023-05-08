@@ -28,6 +28,7 @@ export class DialogAddUserComponent {
     const user = {
       firstname: this.user.firstname,
       lastname: this.user.lastname,
+      email: this.user.email,
       birthDate: this.convertDate(),
       street: this.user.street,
       zipCode: +this.user.zipCode,

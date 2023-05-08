@@ -3,6 +3,7 @@ import { UserData } from '../interface/user-data';
 export class User implements UserData {
   firstname: string;
   lastname: string;
+  email: string;
   birthDate: number; // Timestamp
   street: string;
   zipCode: number;
@@ -11,6 +12,7 @@ export class User implements UserData {
   constructor(private obj?: UserData) {
     this.firstname = obj ? obj.firstname : '';
     this.lastname = obj ? obj.lastname : '';
+    this.email = obj ? obj.email : '';
     this.birthDate = obj ? obj.birthDate : 0;
     this.street = obj ? obj.street : '';
     this.zipCode = obj ? obj.zipCode : 0;
