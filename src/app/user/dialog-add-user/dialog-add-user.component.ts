@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserService } from '../../shared/services/user.service';
 import { User } from 'src/app/shared/models/user.class';
 import { UserData } from 'src/app/shared/interface/user-data';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-add-user',
@@ -13,7 +14,10 @@ export class DialogAddUserComponent {
   user = new User();
   isLoading: boolean = false;
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private dialog: MatDialogRef<DialogAddUserComponent>
+  ) {}
 
   /**
    * Create a new UserData JSON for Firebase
@@ -36,12 +40,20 @@ export class DialogAddUserComponent {
    * save all Userinputs
    * without Validation -.- for now
    */
-  saveUser(): void {
+  onSaveUser(): void {
     this.isLoading = true;
     const user: UserData = this.createNewUser();
     console.log('currentUser: ', user);
     this.userService.addUser(user);
     this.isLoading = false;
+    this.dialog.close();
+  }
+
+  /**
+   * close the DialogComponent
+   */
+  onChancel(): void {
+    this.dialog.close();
   }
 
   /**

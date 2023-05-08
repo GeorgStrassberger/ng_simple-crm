@@ -88,12 +88,14 @@
   </div>
 </div>
 <div mat-dialog-actions>
-  <button [disabled]="isLoading" mat-button>Chancel</button>
+  <button [disabled]="isLoading" mat-button (click)="onChancel()">
+    Chancel
+  </button>
   <button
     [disabled]="isLoading"
     mat-button
     cdkFocusInitial
-    (click)="saveUser()"
+    (click)="onSaveUser()"
   >
     Save
   </button>
