@@ -1,0 +1,43 @@
+.user {
+  .user__header {
+    background-image: url("../../../assets/img/background.jpg");
+    background-color: currentColor;
+    color: whitesmoke;
+    min-height: 16rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 1rem;
+    .user__contnet {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      justify-content: center;
+      .user__image {
+        height: 5rem;
+        width: 5rem;
+        border-radius: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+      .user__details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        .user__detail-name {
+        }
+        .user__detail-email {
+        }
+      }
+    }
+  }
+  mat-card-content {
+    padding: 1rem;
+    .user__address {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
