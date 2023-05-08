@@ -1,3 +1,5 @@
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+
 <h1 mat-dialog-title>Add User</h1>
 <div mat-dialog-content>
   <!-- Name -->
@@ -5,13 +7,23 @@
     <!-- Firstname -->
     <mat-form-field class="mr-16" appearance="outline">
       <mat-label>Firstname</mat-label>
-      <input [(ngModel)]="user.firstname" matInput placeholder="Firstname" />
+      <input
+        [disabled]="isLoading"
+        [(ngModel)]="user.firstname"
+        matInput
+        placeholder="Firstname"
+      />
       <!-- <mat-hint>Please enter a Firstname</mat-hint> -->
     </mat-form-field>
     <!-- Lastname -->
     <mat-form-field appearance="outline">
       <mat-label>Lastname</mat-label>
-      <input [(ngModel)]="user.lastname" matInput placeholder="Lastname" />
+      <input
+        [disabled]="isLoading"
+        [(ngModel)]="user.lastname"
+        matInput
+        placeholder="Lastname"
+      />
       <!-- <mat-hint>Please enter a Lastname</mat-hint> -->
     </mat-form-field>
   </div>
@@ -21,6 +33,7 @@
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Birth Date</mat-label>
       <input
+        [disabled]="isLoading"
         [(ngModel)]="birthDate"
         matInput
         placeholder="Birth Date"
@@ -40,6 +53,7 @@
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Street & House No.</mat-label>
       <input
+        [disabled]="isLoading"
         [(ngModel)]="user.street"
         matInput
         placeholder="Street & House No."
@@ -52,18 +66,35 @@
     <!-- ZipCode -->
     <mat-form-field appearance="outline" class="mr-16">
       <mat-label>Zip code</mat-label>
-      <input [(ngModel)]="user.zipCode" matInput placeholder="Zip code" />
+      <input
+        [disabled]="isLoading"
+        [(ngModel)]="user.zipCode"
+        matInput
+        placeholder="Zip code"
+      />
       <!-- <mat-hint>Please enter a Lastname</mat-hint> -->
     </mat-form-field>
     <!-- City -->
     <mat-form-field appearance="outline">
       <mat-label>City</mat-label>
-      <input [(ngModel)]="user.city" matInput placeholder="City" />
+      <input
+        [disabled]="isLoading"
+        [(ngModel)]="user.city"
+        matInput
+        placeholder="City"
+      />
       <!-- <mat-hint>Please enter a Lastname</mat-hint> -->
     </mat-form-field>
   </div>
 </div>
 <div mat-dialog-actions>
-  <button mat-button>Chancel</button>
-  <button mat-button cdkFocusInitial (click)="saveUser()">Save</button>
+  <button [disabled]="isLoading" mat-button>Chancel</button>
+  <button
+    [disabled]="isLoading"
+    mat-button
+    cdkFocusInitial
+    (click)="saveUser()"
+  >
+    Save
+  </button>
 </div>

@@ -11,6 +11,7 @@ import { UserData } from 'src/app/shared/interface/user-data';
 export class DialogAddUserComponent {
   birthDate!: Date;
   user = new User();
+  isLoading: boolean = false;
 
   constructor(private userService: UserService) {}
 
@@ -36,9 +37,11 @@ export class DialogAddUserComponent {
    * without Validation -.- for now
    */
   saveUser(): void {
+    this.isLoading = true;
     const user: UserData = this.createNewUser();
     console.log('currentUser: ', user);
     this.userService.addUser(user);
+    this.isLoading = false;
   }
 
   /**
