@@ -15,9 +15,8 @@ import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-a
 })
 export class UserDetailComponent implements OnInit {
   currentUserID: string = '';
-  // currentUser!: UserData;
-  currentUser: User = new User(); // Muss erst leer Initzialisiert werden
-  user$!: Observable<UserData>;
+  currentUser: User = new User();
+  // currentUser!: UserData; // Muss erst leer Initzialisiert werden
 
   constructor(
     private route: ActivatedRoute,
@@ -28,24 +27,23 @@ export class UserDetailComponent implements OnInit {
     this.currentUserID = this.route.snapshot.paramMap.get('id') as string;
   }
   ngOnInit() {
-    this.getCurrentUser(this.currentUserID);
-  }
-
-  getCurrentUser(userID: string) {
-    this.user$ = this.userService.getUser(userID);
-    this.user$.subscribe((user: UserData) => {
+    this.userService.getUser(this.currentUserID).subscribe((user: UserData) => {
       this.currentUser = user;
     });
   }
 
   editUser(): void {
     const userDialog = this.dialog.open(DialogEditUserComponent);
-    userDialog.componentInstance.user = this.currentUser;
+    // kopie von User erstellen mit new user()
+    userDialog.componentInstance.editUser = new User(this.currentUser);
   }
 
   editAddress() {
     const addressDialog = this.dialog.open(DialogEditAddressComponent);
-    addressDialog.componentInstance.user = this.user$;
+    // kopie von User erstellen mit new user()
+    addressDialog.componentInstance.editAddressUser = new User(
+      this.currentUser
+    );
   }
 
   deleteUser(id: string) {

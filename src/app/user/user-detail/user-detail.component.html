@@ -25,12 +25,11 @@
   <mat-card-content>
     <mat-card-title>Address:</mat-card-title>
     <div class="user__menu">
-      <button [matMenuTriggerFor]="beforeMenu" mat-mini-fab color="primary">
+      <button [matMenuTriggerFor]="beforeMenu2" mat-mini-fab color="primary">
         <mat-icon>more_vert</mat-icon>
       </button>
-      <mat-menu #beforeMenu="matMenu" xPosition="before">
-        <button mat-menu-item (click)="editUser()">Edit Address</button>
-        <!-- <button mat-menu-item>Delete</button> -->
+      <mat-menu #beforeMenu2="matMenu" xPosition="before">
+        <button mat-menu-item (click)="editAddress()">Edit Address</button>
       </mat-menu>
     </div>
     <div class="user__address">

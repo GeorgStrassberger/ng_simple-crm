@@ -1,5 +1,3 @@
-<mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
-
 <h1 mat-dialog-title>Edit User</h1>
 <div mat-dialog-content>
   <!-- Name -->
@@ -9,8 +7,7 @@
     <mat-form-field class="full-width" appearance="outline">
       <mat-label>Firstname</mat-label>
       <input
-        [disabled]="isLoading"
-        [(ngModel)]="user.firstname"
+        [(ngModel)]="editUser.firstname"
         matInput
         placeholder="Firstname"
       />
@@ -18,28 +15,17 @@
     <!-- Lastname -->
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Lastname</mat-label>
-      <input
-        [disabled]="isLoading"
-        [(ngModel)]="user.lastname"
-        matInput
-        placeholder="Lastname"
-      />
+      <input [(ngModel)]="editUser.lastname" matInput placeholder="Lastname" />
     </mat-form-field>
     <!-- Email -->
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>E-Mail</mat-label>
-      <input
-        [disabled]="isLoading"
-        [(ngModel)]="user.email"
-        matInput
-        placeholder="Email"
-      />
+      <input [(ngModel)]="editUser.email" matInput placeholder="Email" />
     </mat-form-field>
     <!-- Birthdate -->
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Birthdate</mat-label>
       <input
-        [disabled]="isLoading"
         [(ngModel)]="birthDate"
         matInput
         placeholder="Birthdate"
@@ -54,20 +40,14 @@
   </fieldset>
 </div>
 <div mat-dialog-actions>
-  <button
-    [disabled]="isLoading"
-    mat-raised-button
-    color="accent"
-    (click)="onChancel()"
-  >
+  <button mat-raised-button color="accent" (click)="onChancel()">
     Chancel
   </button>
   <button
-    [disabled]="isLoading"
     mat-raised-button
     color="primary"
     cdkFocusInitial
-    (click)="onEditAddress()"
+    (click)="onEditUser()"
   >
     Save
   </button>
