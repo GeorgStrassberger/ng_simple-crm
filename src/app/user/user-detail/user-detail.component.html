@@ -1,5 +1,17 @@
 <mat-card class="user">
   <mat-card-header class="user__header">
+    <div class="user__menu">
+      <button [matMenuTriggerFor]="beforeMenu" mat-mini-fab color="primary">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item (click)="editUser()">Edit User</button>
+        <button mat-menu-item (click)="deleteUser(currentUserID)">
+          Delete
+        </button>
+      </mat-menu>
+    </div>
+
     <div class="user__contnet">
       <img class="user__image" src="../../../assets/img/male.webp" />
       <div class="user__details">
@@ -12,6 +24,15 @@
   </mat-card-header>
   <mat-card-content>
     <mat-card-title>Address:</mat-card-title>
+    <div class="user__menu">
+      <button [matMenuTriggerFor]="beforeMenu" mat-mini-fab color="primary">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item (click)="editUser()">Edit Address</button>
+        <!-- <button mat-menu-item>Delete</button> -->
+      </mat-menu>
+    </div>
     <div class="user__address">
       <span>{{ currentUser.street }}</span>
       <span>{{ currentUser.zipCode }}</span>

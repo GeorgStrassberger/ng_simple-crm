@@ -43,7 +43,7 @@ export class UserComponent implements OnInit, AfterViewInit {
 
   constructor(
     private userService: UserService,
-    public dialog: MatDialog,
+    private dialog: MatDialog,
     private _liveAnnouncer: LiveAnnouncer
   ) {}
 

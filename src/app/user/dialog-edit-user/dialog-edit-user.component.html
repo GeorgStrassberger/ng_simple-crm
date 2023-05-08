@@ -1,0 +1,74 @@
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+
+<h1 mat-dialog-title>Edit User</h1>
+<div mat-dialog-content>
+  <!-- Name -->
+  <fieldset class="name-content">
+    <legend>User:</legend>
+    <!-- Firstname -->
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Firstname</mat-label>
+      <input
+        [disabled]="isLoading"
+        [(ngModel)]="user.firstname"
+        matInput
+        placeholder="Firstname"
+      />
+    </mat-form-field>
+    <!-- Lastname -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Lastname</mat-label>
+      <input
+        [disabled]="isLoading"
+        [(ngModel)]="user.lastname"
+        matInput
+        placeholder="Lastname"
+      />
+    </mat-form-field>
+    <!-- Email -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>E-Mail</mat-label>
+      <input
+        [disabled]="isLoading"
+        [(ngModel)]="user.email"
+        matInput
+        placeholder="Email"
+      />
+    </mat-form-field>
+    <!-- Birthdate -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Birthdate</mat-label>
+      <input
+        [disabled]="isLoading"
+        [(ngModel)]="birthDate"
+        matInput
+        placeholder="Birthdate"
+        [matDatepicker]="picker1"
+      />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker1"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+  </fieldset>
+</div>
+<div mat-dialog-actions>
+  <button
+    [disabled]="isLoading"
+    mat-raised-button
+    color="accent"
+    (click)="onChancel()"
+  >
+    Chancel
+  </button>
+  <button
+    [disabled]="isLoading"
+    mat-raised-button
+    color="primary"
+    cdkFocusInitial
+    (click)="onEditAddress()"
+  >
+    Save
+  </button>
+</div>

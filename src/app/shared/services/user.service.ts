@@ -25,7 +25,7 @@ export class UserService {
       UserData[]
     >;
     this.userCollection$.subscribe((values: UserData[]): void => {
-      console.log('subUsers: ', values);
+      console.log('userCollection: ', values);
     });
   }
 

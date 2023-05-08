@@ -1,5 +1,6 @@
 .user {
   .user__header {
+    position: relative;
     background-image: url("../../../assets/img/background.jpg");
     background-color: currentColor;
     color: whitesmoke;
@@ -9,6 +10,11 @@
     justify-content: flex-start;
     align-items: flex-end;
     padding: 1rem;
+    .user__menu {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
     .user__contnet {
       display: flex;
       flex-direction: row;
@@ -27,14 +33,22 @@
         align-items: flex-start;
         justify-content: center;
         .user__detail-name {
+          text-shadow: 0 0 0.5rem black;
         }
         .user__detail-email {
+          text-shadow: 0 0 0.5rem black;
         }
       }
     }
   }
   mat-card-content {
+    position: relative;
     padding: 1rem;
+    .user__menu {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
     .user__address {
       display: flex;
       flex-direction: column;

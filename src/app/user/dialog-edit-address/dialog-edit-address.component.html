@@ -1,0 +1,59 @@
+<h1 mat-dialog-title>Edit Address</h1>
+<div mat-dialog-content>
+  <!-- Address -->
+  <fieldset>
+    <legend>Adreess:</legend>
+    <!-- Steet & HouseNo -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Street & House No.</mat-label>
+      <input
+        [disabled]="isLoading"
+        [(ngModel)]="user.street"
+        matInput
+        placeholder="Street & House No."
+      />
+      <!-- <mat-hint>Please enter a Lastname</mat-hint> -->
+    </mat-form-field>
+    <!-- ZipCode -->
+    <mat-form-field appearance="outline" class="mr-16">
+      <mat-label>Zip code</mat-label>
+      <input
+        [disabled]="isLoading"
+        [(ngModel)]="user.zipCode"
+        matInput
+        placeholder="Zip code"
+      />
+      <!-- <mat-hint>Please enter a Lastname</mat-hint> -->
+    </mat-form-field>
+    <!-- City -->
+    <mat-form-field appearance="outline">
+      <mat-label>City</mat-label>
+      <input
+        [disabled]="isLoading"
+        [(ngModel)]="user.city"
+        matInput
+        placeholder="City"
+      />
+      <!-- <mat-hint>Please enter a Lastname</mat-hint> -->
+    </mat-form-field>
+  </fieldset>
+</div>
+<div mat-dialog-actions>
+  <button
+    [disabled]="isLoading"
+    mat-raised-button
+    color="accent"
+    (click)="onChancel()"
+  >
+    Chancel
+  </button>
+  <button
+    [disabled]="isLoading"
+    mat-raised-button
+    color="primary"
+    cdkFocusInitial
+    (click)="onEditUser()"
+  >
+    Save
+  </button>
+</div>

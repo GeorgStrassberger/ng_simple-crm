@@ -14,6 +14,8 @@ import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { DialogEditUserComponent } from './user/dialog-edit-user/dialog-edit-user.component';
+import { DialogEditAddressComponent } from './user/dialog-edit-address/dialog-edit-address.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
     PageNotFoundComponent,
     DialogAddUserComponent,
     UserDetailComponent,
+    DialogEditUserComponent,
+    DialogEditAddressComponent,
   ],
   imports: [
     BrowserModule,
