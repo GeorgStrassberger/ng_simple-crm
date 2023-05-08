@@ -1,24 +1,28 @@
 import { Injectable } from '@angular/core';
-import { User } from '../models/user.class';
+import { UserData } from '../interface/user-data';
+import {
+  DocumentData,
+  Firestore,
+  addDoc,
+  collection,
+  collectionData,
+} from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  user?: User;
+  currentUser?: UserData;
 
-  constructor() {}
+  userCollection$: Observable<DocumentData[]>;
 
-  createUser(user: User): void {
-    this.user = new User(user);
-    console.log('userService.user: ', this.user);
+  constructor(private firestore: Firestore) {
+    const usersCollection = collection(this.firestore, 'users');
+    this.userCollection$ = collectionData(usersCollection);
   }
 
-  getUser(): User | null {
-    if (this.user) {
-      return this.user;
-    } else {
-      return null;
-    }
+  addUser(user: UserData): void {
+    addDoc(collection(this.firestore, 'users'), user);
   }
 }

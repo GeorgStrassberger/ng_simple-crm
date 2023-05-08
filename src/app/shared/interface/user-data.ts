@@ -1,7 +1,7 @@
 export interface UserData {
   firstname: string;
   lastname: string;
-  birthDate: number; // Timestamp
+  birthDate: number;
   street: string;
   zipCode: number;
   city: string;

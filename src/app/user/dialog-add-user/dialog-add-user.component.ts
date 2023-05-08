@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../shared/services/user.service';
 import { User } from 'src/app/shared/models/user.class';
+import { UserData } from 'src/app/shared/interface/user-data';
 
 @Component({
   selector: 'app-dialog-add-user',
@@ -8,22 +9,41 @@ import { User } from 'src/app/shared/models/user.class';
   styleUrls: ['./dialog-add-user.component.scss'],
 })
 export class DialogAddUserComponent {
-  user: User = new User();
   birthDate!: Date;
+  user = new User();
 
   constructor(private userService: UserService) {}
 
   /**
-   * save all Userinputs
+   * Create a new UserData JSON for Firebase
+   * to save it in DB.
+   * @returns
    */
-  saveUser(): void {
-    this.user.birthDate = this.convertDate();
-    console.log('currentUser: ', this.user);
-    this.userService.createUser(this.user);
+  createNewUser(): UserData {
+    const user = {
+      firstname: this.user.firstname,
+      lastname: this.user.lastname,
+      birthDate: this.convertDate(),
+      street: this.user.street,
+      zipCode: +this.user.zipCode,
+      city: this.user.city,
+    };
+    return user;
   }
 
   /**
-   * convert birthDate of type Date to type number
+   * save all Userinputs
+   * without Validation -.- for now
+   */
+  saveUser(): void {
+    const user: UserData = this.createNewUser();
+    console.log('currentUser: ', user);
+    this.userService.addUser(user);
+  }
+
+  /**
+   * convert birthDate of type Date to type number.
+   * to get the timestamp for database JSON.
    * @returns
    */
   convertDate(): number {
