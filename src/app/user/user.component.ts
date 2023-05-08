@@ -34,6 +34,7 @@ export class UserComponent implements OnInit, AfterViewInit {
     'zipCode',
     'city',
     'street',
+    'edit',
     'delete',
   ];
 
