@@ -4,63 +4,66 @@
 <div mat-dialog-content>
   <!-- Name -->
   <div class="name-content">
-    <!-- Firstname -->
-    <mat-form-field class="mr-16" appearance="outline">
-      <mat-label>Firstname</mat-label>
-      <input
-        [disabled]="isLoading"
-        [(ngModel)]="user.firstname"
-        matInput
-        placeholder="Firstname"
-      />
-      <!-- <mat-hint>Please enter a Firstname</mat-hint> -->
-    </mat-form-field>
-    <!-- Lastname -->
-    <mat-form-field appearance="outline">
-      <mat-label>Lastname</mat-label>
-      <input
-        [disabled]="isLoading"
-        [(ngModel)]="user.lastname"
-        matInput
-        placeholder="Lastname"
-      />
-      <!-- <mat-hint>Please enter a Lastname</mat-hint> -->
-    </mat-form-field>
+    <fieldset>
+      <legend>User:</legend>
+
+      <!-- Firstname -->
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Firstname</mat-label>
+        <input
+          [disabled]="isLoading"
+          [(ngModel)]="user.firstname"
+          matInput
+          placeholder="Firstname"
+        />
+        <!-- <mat-hint>Please enter a Firstname</mat-hint> -->
+      </mat-form-field>
+      <!-- Lastname -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Lastname</mat-label>
+        <input
+          [disabled]="isLoading"
+          [(ngModel)]="user.lastname"
+          matInput
+          placeholder="Lastname"
+        />
+        <!-- <mat-hint>Please enter a Lastname</mat-hint> -->
+      </mat-form-field>
+      <!-- Email -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input
+          [disabled]="isLoading"
+          [(ngModel)]="user.email"
+          matInput
+          placeholder="Email"
+        />
+        <!-- <mat-hint>Please enter a Email
+      </mat-hint> -->
+      </mat-form-field>
+      <!-- Birthdate -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Birthdate</mat-label>
+        <input
+          [disabled]="isLoading"
+          [(ngModel)]="birthDate"
+          matInput
+          placeholder="Birthdate"
+          [matDatepicker]="picker1"
+        />
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker1"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+        <!-- <mat-hint>Please enter a Date</mat-hint> -->
+      </mat-form-field>
+    </fieldset>
   </div>
 
-  <div>
-    <!-- Email -->
-    <mat-form-field appearance="outline">
-      <mat-label>Email</mat-label>
-      <input
-        [disabled]="isLoading"
-        [(ngModel)]="user.email"
-        matInput
-        placeholder="Lastname"
-      />
-      <!-- <mat-hint>Please enter a Email
-      </mat-hint> -->
-    </mat-form-field>
-    <!-- Birthdate -->
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Email</mat-label>
-      <input
-        [disabled]="isLoading"
-        [(ngModel)]="birthDate"
-        matInput
-        placeholder="Email"
-        [matDatepicker]="picker1"
-      />
-      <mat-datepicker-toggle
-        matIconSuffix
-        [for]="picker1"
-      ></mat-datepicker-toggle>
-      <mat-datepicker #picker1></mat-datepicker>
-      <!-- <mat-hint>Please enter a Date</mat-hint> -->
-    </mat-form-field>
-  </div>
   <!-- Address -->
-  <div>
+  <fieldset>
+    <legend>Adreess:</legend>
     <!-- Steet & HouseNo -->
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Street & House No.</mat-label>
@@ -72,9 +75,6 @@
       />
       <!-- <mat-hint>Please enter a Lastname</mat-hint> -->
     </mat-form-field>
-  </div>
-
-  <div>
     <!-- ZipCode -->
     <mat-form-field appearance="outline" class="mr-16">
       <mat-label>Zip code</mat-label>
@@ -97,7 +97,7 @@
       />
       <!-- <mat-hint>Please enter a Lastname</mat-hint> -->
     </mat-form-field>
-  </div>
+  </fieldset>
 </div>
 <div mat-dialog-actions>
   <button [disabled]="isLoading" mat-button (click)="onChancel()">

@@ -14,14 +14,22 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  userCollection$: Observable<DocumentData[]>;
+  userCollection$: Observable<UserData[]>;
 
   constructor(private firestore: Firestore) {
     const usersCollection = collection(this.firestore, 'users');
-    this.userCollection$ = collectionData(usersCollection);
-    this.userCollection$.subscribe((values) =>
-      console.log('subUsers: ', values)
-    );
+    this.userCollection$ = collectionData(usersCollection) as Observable<
+      UserData[]
+    >;
+    this.userCollection$.subscribe((values: UserData[]): void => {
+      console.log('subUsers: ', values);
+    });
+  }
+
+  getAllUsers(): Observable<UserData[]> {
+    return collectionData(collection(this.firestore, 'users'), {
+      idField: 'id',
+    }) as Observable<UserData[]>;
   }
 
   addUser(user: UserData): void {
