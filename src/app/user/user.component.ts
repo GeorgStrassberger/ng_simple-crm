@@ -52,6 +52,10 @@ export class UserComponent implements OnInit, AfterViewInit {
     });
   }
 
+  onDeleteUser(id: string): void {
+    this.userService.deleteUser(id);
+  }
+
   openDialog(): void {
     this.dialog.open(DialogAddUserComponent);
   }
