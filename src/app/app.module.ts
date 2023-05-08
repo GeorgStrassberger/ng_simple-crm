@@ -9,6 +9,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DialogAddUserComponent } from './user/dialog-add-user/dialog-add-user.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,15 @@ import { DialogAddUserComponent } from './user/dialog-add-user/dialog-add-user.c
     PageNotFoundComponent,
     DialogAddUserComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MaterialModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MaterialModule,
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

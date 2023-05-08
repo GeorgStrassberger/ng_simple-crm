@@ -27,6 +27,7 @@ export class DialogAddUserComponent {
    * @returns
    */
   convertDate(): number {
-    return this.birthDate.getTime();
+    const timestamp: number = this.birthDate.getTime();
+    return timestamp;
   }
 }
