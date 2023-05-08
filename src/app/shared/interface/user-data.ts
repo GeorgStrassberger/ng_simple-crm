@@ -5,4 +5,5 @@ export interface UserData {
   street: string;
   zipCode: number;
   city: string;
+  id?: string;
 }
