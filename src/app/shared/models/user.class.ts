@@ -16,4 +16,15 @@ export class User implements UserData {
     this.zipCode = obj ? obj.zipCode : 0;
     this.city = obj ? obj.city : '';
   }
+
+  toJSON() {
+    return {
+      firstname: this.firstname,
+      lastname: this.lastname,
+      birthDate: this.birthDate,
+      street: this.street,
+      zipCode: this.zipCode,
+      city: this.city,
+    };
+  }
 }
