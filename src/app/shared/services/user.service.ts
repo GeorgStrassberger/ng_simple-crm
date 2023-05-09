@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UserData } from '../interface/user-data';
 import {
-  DocumentData,
   Firestore,
   addDoc,
   collection,
@@ -11,7 +10,7 @@ import {
   docData,
   updateDoc,
 } from '@angular/fire/firestore';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',

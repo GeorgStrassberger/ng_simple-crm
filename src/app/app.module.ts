@@ -16,6 +16,10 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { DialogEditUserComponent } from './user/dialog-edit-user/dialog-edit-user.component';
 import { DialogEditAddressComponent } from './user/dialog-edit-address/dialog-edit-address.component';
+import { HomeComponent } from './home/home.component';
+import { InfoComponent } from './info/info.component';
+import { ImprintComponent } from './imprint/imprint.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,10 @@ import { DialogEditAddressComponent } from './user/dialog-edit-address/dialog-ed
     UserDetailComponent,
     DialogEditUserComponent,
     DialogEditAddressComponent,
+    HomeComponent,
+    InfoComponent,
+    ImprintComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,

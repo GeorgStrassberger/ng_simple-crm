@@ -5,7 +5,7 @@ import { TooltipPosition } from '@angular/material/tooltip';
 import { DialogAddUserComponent } from './dialog-add-user/dialog-add-user.component';
 import { UserData } from '../shared/interface/user-data';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { MatSort, Sort } from '@angular/material/sort';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { UserService } from '../shared/services/user.service';
 
@@ -15,6 +15,7 @@ import { UserService } from '../shared/services/user.service';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit, AfterViewInit {
+  value: string = 'Search';
   positionOptions: TooltipPosition[] = [
     'after',
     'before',
@@ -65,12 +66,9 @@ export class UserComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  /** Announce the change in sort state for assistive technology. */
-  announceSortChange(sortState: Sort): void {
-    if (sortState.direction) {
-      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
-    } else {
-      this._liveAnnouncer.announce('Sorting cleared');
-    }
+  doFilter(event: KeyboardEvent) {
+    console.log(event);
+    const filterValue: string = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
   }
 }

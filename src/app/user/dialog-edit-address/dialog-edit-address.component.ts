@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 import { UserData } from 'src/app/shared/interface/user-data';
-import { User } from 'src/app/shared/models/user.class';
 import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
@@ -11,7 +9,7 @@ import { UserService } from 'src/app/shared/services/user.service';
   templateUrl: './dialog-edit-address.component.html',
   styleUrls: ['./dialog-edit-address.component.scss'],
 })
-export class DialogEditAddressComponent implements OnInit {
+export class DialogEditAddressComponent {
   currentUserID: string = '';
   editAddressUser!: UserData; // Muss erst leer Initzialisiert werden
 
@@ -22,8 +20,6 @@ export class DialogEditAddressComponent implements OnInit {
   ) {
     this.currentUserID = this.route.snapshot.paramMap.get('id') as string;
   }
-
-  ngOnInit() {}
 
   onChancel() {
     this.dialog.close();

@@ -1,5 +1,37 @@
+mat-toolbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  mat-form-field {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+  }
+}
+
 .add-user-btn {
   position: absolute;
   bottom: 3.5rem;
   right: 3.5rem;
+}
+
+.table-contaienr {
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  flex-direction: column;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
 }
